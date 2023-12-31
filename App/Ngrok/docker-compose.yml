@@ -48,7 +48,7 @@ x-casaos:
     en_us: "Ngrok is a secure unified ingress platform that combines your global server load balancing, reverse proxy, firewall, API gateway and Kubernetes Ingress Controller to deliver applications and APIs."
   thumbnail: https://cdn.jsdelivr.net/gh/sakibweb/CasaOS-SakibWeb@main/App/Ngrok/thumbnail.png
   screenshot_link:
-    - https://github.com/sakibweb/CasaOS-SakibWeb/blob/main/App/Ngrok/screenshot.png
+    - https://cdn.jsdelivr.net/gh/sakibweb/CasaOS-SakibWeb@main/App/Ngrok/screenshot-1.png
   tips:
     custom: |-
       Environment Variables
