@@ -1,0 +1,76 @@
+{
+	"version": "1.0",
+	"title": "Ngrok",
+	"name": "ngrok",
+	"icon": "https://cdn.jsdelivr.net/gh/sakibweb/CasaOS-SakibWeb@main/App/Ngrok/icon.png",
+	"tagline": "Ngrok is a secure unified ingress platform that combines your global server load balancing, reverse proxy, firewall, API gateway and Kubernetes Ingress Controller to deliver applications and APIs.",
+	"overview": "Ngrok is a secure unified ingress platform that combines your global server load balancing, reverse proxy, firewall, API gateway and Kubernetes Ingress Controller to deliver applications and APIs.",
+	"thumbnail": "https://cdn.jsdelivr.net/gh/sakibweb/CasaOS-SakibWeb@main/App/Ngrok/thumbnail.png",
+	"screenshots": [
+		"https://github.com/sakibweb/CasaOS-SakibWeb/blob/main/App/Ngrok/screenshot.png"
+	],
+	"category": [
+		"Network"
+	],
+	"developer": {
+		"name": "NgrokTeam",
+		"website": "https://ngrok.com",
+		"donate_text": "",
+		"donate_link": ""
+	},
+	"adaptor": {
+		"name": "SakibWeb",
+		"website": "https://sakibweb.github.io",
+		"donate_text": "",
+		"donate_link": ""
+	},
+	"support": "",
+	"website": "",
+	"container": {
+		"image": "ngrok/ngrok",
+		"shell": "sh",
+		"privileged": false,
+		"network_model": "host",
+		"web_ui": {
+			"http": "",
+			"path": "/"
+		},
+		"health_check": "",
+		"envs": [{
+				"key": "NGROK_AUTHTOKEN",
+				"value": "xxxxx",
+				"description": "NGROK_AUTHTOKEN = set our own token",
+				"configurable": "yes"
+			}],
+		"ports": [
+			{}
+		],
+		"volumes": [],
+		"devices": [],
+		"constraints": {
+			"min_memory": 64,
+			"min_storage": 128
+		},
+		"restart_policy": "unless-stopped",
+		"sysctls": [],
+		"cap_add": [],
+		"labels": [],
+		"host_name": "xxxxx.ngrok-free.app",
+		"cmd": "http --domain=xxxxx.ngrok-free.app 80"
+	},
+	"abilities": {
+		"notification": false,
+		"widgets": false,
+		"authentication": false,
+		"search": false,
+		"upnp": false
+	},
+	"tips": {
+		"before_install": "Environment Variables <br> NGROK_AUTHTOKEN = set our own <br> - - - - - - - - - - - - - - - - - - - - - - <br>Container Command<br>http / https<br>your ngrok domain<br>your port for forwarding<br>- - - - - - - - - - - - - - - - - - - - - - <br>Hostname / Web UI = your subdomain"
+	},
+	"changelog": {
+		"latest_updates": "",
+		"url": ""
+	},
+	"latest_update_date": ""
+}
