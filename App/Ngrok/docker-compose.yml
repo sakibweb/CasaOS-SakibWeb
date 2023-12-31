@@ -1,0 +1,67 @@
+name: ngrok
+services:
+  ngrok:
+    command:
+      - http
+      - --domain=xxxxx.ngrok-free.app
+      - "80"
+    container_name: ngrok
+    deploy:
+      resources:
+        limits:
+          memory: 256M
+    environment:
+      - NGROK_AUTHTOKEN=xxxxx
+    image: ngrok/ngrok
+    privileged: true
+    restart: unless-stopped
+    x-casaos:
+      envs:
+        - container: NGROK_AUTHTOKEN
+          description:
+            en_us: "NGROK_AUTHTOKEN = set our own token"
+    ports: []
+    volumes: []
+    devices: []
+    cap_add: []
+    network_mode: host
+x-casaos:
+  architectures:
+    - "386"
+    - arm
+    - arm64
+    - amd64
+    - ppc64le
+  author: sakibweb
+  category: Network
+  description:
+    en_us: "Ngrok is a secure unified ingress platform that combines your global server load balancing, reverse proxy, firewall, API gateway and Kubernetes Ingress Controller to deliver applications and APIs."
+  developer: NgrokTeam
+  hostname: xxxxx.ngrok-free.app
+  icon: https://www.gravatar.com/avatar/28414d5e511ea872fcf88c636a6ff735?s=80&r=g&d=mm
+  index: /
+  main: ngrok
+  port_map: ""
+  scheme: http
+  store_app_id: ngrok
+  tagline:
+    en_us: "Ngrok is a secure unified ingress platform that combines your global server load balancing, reverse proxy, firewall, API gateway and Kubernetes Ingress Controller to deliver applications and APIs."
+  thumbnail: https://www.gravatar.com/avatar/28414d5e511ea872fcf88c636a6ff735?s=80&r=g&d=mm
+  screenshot_link:
+    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/AdGuardHome/screenshot-1.png
+    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/AdGuardHome/screenshot-2.png
+    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/AdGuardHome/screenshot-3.png
+  tips:
+    custom: |-
+      Environment Variables
+      NGROK_AUTHTOKEN = set our own
+      - - - - - - - - - - - - - - - - - - - - - - 
+      Container Command
+      http / https
+      your ngrok domain
+      your port for forwarding
+      - - - - - - - - - - - - - - - - - - - - - - 
+      Hostname / Web UI = your subdomain
+  title:
+    custom: ""
+    en_us: Ngrok
