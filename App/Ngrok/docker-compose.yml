@@ -1,65 +1,47 @@
-name: ngrok
+name: vigorous_felice
 services:
-  ngrok:
+  main_app:
+    cpu_shares: 50
     command:
       - http
-      - --domain=xxxxx.ngrok-free.app
+      - --domain=robin-informed-bluebird.ngrok-free.app
       - "80"
     container_name: ngrok
     deploy:
       resources:
         limits:
-          memory: 256M
+          memory: 512M
     environment:
-      - NGROK_AUTHTOKEN=xxxxx
+      - NGROK_AUTHTOKEN=1bkytgmw1t404YEerkWfYFsOvir_3GyVpun5pjpAPVR4fGTH1
     image: ngrok/ngrok
-    privileged: true
+    labels:
+      icon: https://cdn.jsdelivr.net/gh/sakibweb/CasaOS-SakibWeb@main/App/Ngrok/icon.png
     restart: unless-stopped
-    x-casaos:
-      envs:
-        - container: NGROK_AUTHTOKEN
-          description:
-            en_us: "NGROK_AUTHTOKEN = set our own token"
     ports: []
     volumes: []
     devices: []
     cap_add: []
     network_mode: host
+    privileged: false
 x-casaos:
-  architectures:
-    - "386"
-    - arm
-    - arm64
-    - amd64
-    - ppc64le
-  author: sakibweb
-  category: Network
-  description:
-    en_us: "Ngrok is a secure unified ingress platform that combines your global server load balancing, reverse proxy, firewall, API gateway and Kubernetes Ingress Controller to deliver applications and APIs."
-  developer: NgrokTeam
-  hostname: xxxxx.ngrok-free.app
+  author: self
+  category: self
+  hostname: robin-informed-bluebird.ngrok-free.app
   icon: https://cdn.jsdelivr.net/gh/sakibweb/CasaOS-SakibWeb@main/App/Ngrok/icon.png
   index: /
-  main: ngrok
   port_map: ""
   scheme: http
-  store_app_id: ngrok
-  tagline:
-    en_us: "Ngrok is a secure unified ingress platform that combines your global server load balancing, reverse proxy, firewall, API gateway and Kubernetes Ingress Controller to deliver applications and APIs."
-  thumbnail: https://cdn.jsdelivr.net/gh/sakibweb/CasaOS-SakibWeb@main/App/Ngrok/thumbnail.png
-  screenshot_link:
-    - https://cdn.jsdelivr.net/gh/sakibweb/CasaOS-SakibWeb@main/App/Ngrok/screenshot-1.png
+  store_app_id: vigorous_felice
   tips:
-    custom: |-
-      Environment Variables
-      NGROK_AUTHTOKEN = set our own
-      - - - - - - - - - - - - - - - - - - - - - - 
-      Container Command
-      http / https
-      your ngrok domain
-      your port for forwarding
-      - - - - - - - - - - - - - - - - - - - - - - 
-      Hostname / Web UI = your subdomain
+    custom: |-2
+            Environment Variables
+            NGROK_AUTHTOKEN = set our own
+            - - - - - - - - - - - - - - - - - -
+            Container Command
+            http / https
+            your ngrok domain
+            your port for forwarding
+            - - - - - - - - - - - - - - - - - -
+            Hostname / Web UI = your subdomain
   title:
-    custom: ""
-    en_us: Ngrok
+    custom: Ngrok
