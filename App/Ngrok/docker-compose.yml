@@ -1,10 +1,11 @@
 name: vigorous_felice
+
 services:
   main_app:
     cpu_shares: 50
     command:
       - http
-      - --domain=robin-informed-bluebird.ngrok-free.app
+      - --domain=xxxxx.ngrok-free.app
       - "80"
     container_name: ngrok
     deploy:
@@ -12,7 +13,7 @@ services:
         limits:
           memory: 512M
     environment:
-      - NGROK_AUTHTOKEN=1bkytgmw1t404YEerkWfYFsOvir_3GyVpun5pjpAPVR4fGTH1
+      - NGROK_AUTHTOKEN=xxxxx
     image: ngrok/ngrok
     labels:
       icon: https://cdn.jsdelivr.net/gh/sakibweb/CasaOS-SakibWeb@main/App/Ngrok/icon.png
@@ -23,10 +24,11 @@ services:
     cap_add: []
     network_mode: host
     privileged: false
+
 x-casaos:
   author: self
-  category: self
-  hostname: robin-informed-bluebird.ngrok-free.app
+  category: Network
+  hostname: xxxxx.ngrok-free.app
   icon: https://cdn.jsdelivr.net/gh/sakibweb/CasaOS-SakibWeb@main/App/Ngrok/icon.png
   index: /
   port_map: ""
@@ -34,14 +36,19 @@ x-casaos:
   store_app_id: vigorous_felice
   tips:
     custom: |-2
-            Environment Variables
-            NGROK_AUTHTOKEN = set our own
-            - - - - - - - - - - - - - - - - - -
-            Container Command
-            http / https
-            your ngrok domain
-            your port for forwarding
-            - - - - - - - - - - - - - - - - - -
-            Hostname / Web UI = your subdomain
+      Environment Variables
+      NGROK_AUTHTOKEN = set your own
+      - - - - - - - - - - - - - - - - - -
+      Container Command
+      http / https
+      your ngrok domain
+      your port for forwarding
+      - - - - - - - - - - - - - - - - - -
+      Hostname / Web UI = your subdomain
   title:
     custom: Ngrok
+  tagline: "Secure unified ingress platform for global server load balancing, reverse proxy, firewall, API gateway, and Kubernetes Ingress Controller."
+  overview: "Ngrok is a secure unified ingress platform that combines your global server load balancing, reverse proxy, firewall, API gateway, and Kubernetes Ingress Controller to deliver applications and APIs."
+  thumbnail: https://cdn.jsdelivr.net/gh/sakibweb/CasaOS-SakibWeb@main/App/Ngrok/thumbnail.png
+  screenshots:
+    - https://cdn.jsdelivr.net/gh/sakibweb/CasaOS-SakibWeb@main/App/Ngrok/screenshot-1.png
